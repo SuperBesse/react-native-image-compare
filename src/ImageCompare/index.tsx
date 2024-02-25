@@ -17,12 +17,12 @@ import Slider from '@react-native-community/slider';
 // create a vertical bar to scroll
 
 type Props = {
-  leftImage: ImageSourcePropType;
-  rightImage: ImageSourcePropType;
+  imageLeft: ImageSourcePropType;
+  imageRight: ImageSourcePropType;
 };
 
 const ImageSlider = (props: Props) => {
-  const {leftImage, rightImage} = props;
+  const {imageLeft, imageRight} = props;
   const [sliderValue, setSliderValue] = useState(0.5);
   const fullWidth = Dimensions.get('window').width;
 
@@ -31,7 +31,7 @@ const ImageSlider = (props: Props) => {
       <View style={styles.imagesContainer}>
         <Image
           style={[styles.imageLeft, {width: fullWidth}]}
-          source={leftImage}
+          source={imageLeft}
           testID="image-component"
         />
         <View
@@ -40,7 +40,7 @@ const ImageSlider = (props: Props) => {
             {width: fullWidth * (1 - sliderValue)},
           ]}>
           <Image
-            source={rightImage}
+            source={imageRight}
             style={[styles.imageRight, {width: fullWidth}]}
             testID="image-component"
           />

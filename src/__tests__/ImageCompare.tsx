@@ -4,11 +4,11 @@ import ImageCompare from '../ImageCompare';
 
 describe('<ImageSlider />', () => {
   it('renders two images', () => {
-    const leftImageSrc = {uri: 'leftImageSrc.jpg'};
-    const rightImageSrc = {uri: 'rightImageSrc.jpg'};
+    const imageLeftSrc = {uri: 'imageLeftSrc.jpg'};
+    const imageRightSrc = {uri: 'imageRightSrc.jpg'};
 
     const {getAllByTestId} = render(
-      <ImageCompare leftImage={leftImageSrc} rightImage={rightImageSrc} />,
+      <ImageCompare imageLeft={imageLeftSrc} imageRight={imageRightSrc} />,
     );
     const images = getAllByTestId('image-component');
     expect(images.length).toBe(2);

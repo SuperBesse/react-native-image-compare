@@ -26,16 +26,16 @@ function App(): React.JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <ImageCompare
-        leftImage={{
+        imageLeft={{
           uri: 'https://www.iphon.fr/app/uploads/2023/10/shore-wide-s23.jpg',
         }}
-        rightImage={{
+        imageRight={{
           uri: 'https://www.iphon.fr/app/uploads/2023/10/shore-night-wide-iphone.jpg',
         }}
       />
       <ImageCompare
-        leftImage={require('./img/original.jpg')}
-        rightImage={require('./img/restored.jpg')}
+        imageLeft={require('./img/original.jpg')}
+        imageRight={require('./img/restored.jpg')}
       />
     </SafeAreaView>
   );
