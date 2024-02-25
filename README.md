@@ -1,79 +1,70 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Image Compare
 
-# Getting Started
+React Native Image Compare is a React Native component that enables users to visually compare two images by sliding a divider to reveal more or less of each image.
+![ScreenRecording2024-02-25at23 59 20-ezgif com-optimize](https://github.com/SuperBesse/react-native-image-compare/assets/10027577/8b2dc37d-04a8-4741-80a5-d09709b13c71)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Customizable Slider**: Control the slider's position, color, and size.
+- **Responsive Design**: Adapts seamlessly to various device sizes and orientations.
+- **Easy to Integrate**: Simple API and straightforward installation.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Installation
 
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+To install the React Native Image Comparison Slider, run the following command in your React Native project:
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+yarn add react-native-image-comparison-slider
+```
+Or, if you prefer using npm:
+```
+npm install react-native-image-comparison-slider --save
 ```
 
-### For iOS
+## Usage
 
-```bash
-# using npm
-npm run ios
+Here's a basic example of how to use the Image Comparison Slider in your React Native application:
 
-# OR using Yarn
-yarn ios
+```jsx
+import React from 'react';
+import { View } from 'react-native';
+import ImageComparisonSlider from 'react-native-image-comparison-slider';
+
+const App = () => (
+  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <ImageComparisonSlider
+      imageLeft={{ uri: 'https://example.com/image1.jpg' }}
+      imageRight={{ uri: 'https://example.com/image2.jpg' }}
+      sliderPosition={50} // Initial position of the slider
+      onSlide={(position) => console.log('Slider Position:', position)}
+    />
+  </View>
+);
+
+
+
+export default App;
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Props
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+| Prop            | Type     | Description                                        | Default |
+|-----------------|----------|----------------------------------------------------|---------|
+| `imageLeft`     | [ImageSource](https://reactnative.dev/docs/image#imagesource)   | Source object for the left image.                  | None    |
+| `imageRight`    | [ImageSource](https://reactnative.dev/docs/image#imagesource)   | Source object for the right image.                 | None    |
 
-## Step 3: Modifying your App
+## Contributing
 
-Now that you have successfully run the app, let's modify it.
+We welcome contributions to the React Native Image Comparison Slider! Whether it's reporting bugs, discussing new features, or submitting pull requests, all contributions are appreciated.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+To contribute:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Commit your changes.
+4. Push to your branch.
+5. Submit a pull request.
 
-## Congratulations! :tada:
+## License
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the LICENSE file for details.
